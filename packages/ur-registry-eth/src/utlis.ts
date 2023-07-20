@@ -1,13 +1,12 @@
 // @ts-ignore
 import HDKey from "hdkey";
-import { toChecksumAddress, publicToAddress } from "@ethereumjs/util";
+import { toChecksumAddress, publicToAddress, bytesToHex } from "@doomjs/ethereumjs-util";
 
 export const generateAddressFromXpub = (xpub: string, derivePath: string) => {
   // @ts-ignore
   const node = HDKey.fromExtendedKey(xpub);
   const publicKey = node.derive(derivePath);
-  const address =
-    "0x" + publicToAddress(publicKey.publicKey, true).toString("hex");
+  const address = bytesToHex(publicToAddress(publicKey.publicKey, true));
   return toChecksumAddress(address);
 };
 
