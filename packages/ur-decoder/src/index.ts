@@ -10,7 +10,7 @@ import {
   CryptoAccount,
   ETHSignature,
   EthSignRequest,
-} from "@keystonehq/bc-ur-registry-eth";
+} from "@doomjs/keystonehq-bc-ur-registry-eth";
 
 export class URRegistryDecoder extends URDecoder {
   public resultRegistryType = () => {
